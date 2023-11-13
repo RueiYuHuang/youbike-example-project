@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types'
-import { useState } from "react"
+import { useRef, useState } from "react"
 import './index.scss'
 
 const CustomSearch = ({search, setSearch, defineSearch, setDefineSearch, searchDatas, placeholder}) => {
   const [searchIsActive, setSearchIsActive] = useState(false)
+  const inputDom = useRef()
+  console.log(inputDom)
   
   // 綁定搜尋
   const searchData = (e) => {
@@ -25,9 +27,16 @@ const CustomSearch = ({search, setSearch, defineSearch, setDefineSearch, searchD
     setSearchIsActive(false)
   }
 
+  // 一鍵清除
+  const clearSearch = () => {
+    setSearch('')
+    setDefineSearch('')
+    inputDom.current.focus()
+  }
+
   return (
     <div className={`custom-search ${searchIsActive && 'custom-search--active'}`}>
-      <input type="text" className={`search ${search === defineSearch && 'search--active'}`} placeholder={placeholder} value={search} onChange={searchData} onFocus={() => {setSearchIsActive(true)}} />
+      <input ref={inputDom} type="text" className={`search ${search !== '' && search === defineSearch && 'search--active'}`} placeholder={placeholder} value={search} onChange={searchData} onFocus={() => {setSearchIsActive(true)}} />
       <div className="preview">
         {searchResult && searchResult.map((data, index) => {
           return (
@@ -35,7 +44,11 @@ const CustomSearch = ({search, setSearch, defineSearch, setDefineSearch, searchD
           )
         })}
       </div>
-      <div className={`search-logo ${ search !== '' && search === defineSearch && 'search-logo--active'}`}>
+      <div className='search-logo'>
+        <span></span>
+        <span></span>
+      </div>
+      <div className={`clear-item ${search !== '' && 'clear-item--show'}`} onClick={clearSearch}>
         <span></span>
         <span></span>
       </div>
