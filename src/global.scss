@@ -1,0 +1,30 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+:root {
+  --header-height: 104px;
+  --mobile-header-height: 72px;
+
+  --main-color: #B5CC22;
+  --second-color: #677510;
+  --main-font-color: #323232;
+  --white-color: #ffffff;
+  --grey-color: #F6F6F6;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  min-height: 100vh;
+  font-family: "Noto Sans TC", sans-serif;
+  color: var(--main-font-color);
+}

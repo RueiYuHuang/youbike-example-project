@@ -1,0 +1,10 @@
+.default-layout {
+    .backdrop {
+        padding: 0 32px;
+    }
+    .main {
+        min-height: var(--main-height);
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+}

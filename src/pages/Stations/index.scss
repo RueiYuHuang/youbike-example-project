@@ -1,0 +1,69 @@
+.stations {
+    .title {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        color: var(--main-color);
+        margin: 32px 0;
+    }
+    .query {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        &__filter {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        &__checkbox {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+        &__background {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+    .result {
+        overflow: auto;
+        .table__body__cell--green{
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--main-color);   
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .title {
+            font-size: 18px;
+            margin: 32px 0;
+        }
+        .query {
+            grid-template-columns: 1fr;
+            &__filter {
+                grid-template-columns: 1fr;
+                > div:nth-child(1) {
+                    order: 2;
+                }
+                > div:nth-child(2) {
+                    order: 1;
+                }
+            }
+            &__checkbox {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            &__background {
+                display: none;
+            }
+        }
+        .result {
+            .table__body__cell--green{
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

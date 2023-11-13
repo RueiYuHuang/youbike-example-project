@@ -1,0 +1,41 @@
+.custom-table{
+    width: 100%;
+    min-width: 480px;
+    border-radius: 28px;
+    border: .5px solid #AEAEAE;
+    border-spacing:0;
+    overflow: hidden;
+    text-align: center;
+    thead{
+        color: var(--white-color);
+        background-color: var(--main-color);
+        > tr {
+            font-size: 1.8rem;
+            font-weight: 500;
+            height: 66px;
+        }
+    }
+    tbody{
+        > tr {
+            font-size: 1.6rem;
+            font-weight: 400;
+            height: 72px;
+            &:nth-child(even){
+                background-color: var(--grey-color);
+            }
+        }
+    }
+    @media screen and (max-width: 768px) {
+        border-radius: 8px;
+        thead{
+            > tr {
+                font-size: 1.6rem;
+            }
+        }
+        tbody{
+            > tr {
+                font-size: 1.4rem;       
+            }
+        }
+    }
+}
