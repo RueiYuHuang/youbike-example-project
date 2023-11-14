@@ -14,7 +14,7 @@ const CustomSelect = ({data, setData, selectDatas ,placeholder}) => {
       <div className="option">
         {selectDatas.map((data) => {
           return (
-            <div className="option__item" key={data.id} onClick={() => {setData(data.city)}}>{data.city}</div>
+            <div className="option__item" key={data.id} onClick={() => {setData(data.content)}}>{data.content}</div>
           )
         })}
       </div>

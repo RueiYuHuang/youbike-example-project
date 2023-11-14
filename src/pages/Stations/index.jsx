@@ -55,7 +55,7 @@ const Stations = () => {
           url = 'https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json'
           break;
         default:
-          url = 'https://mocki.io/v1/ac5ccee7-6dad-4f25-8c1d-59c7555eedac'
+          url = 'https://mocki.io/v1/ca23b8e7-bba8-4bd9-b9d5-f59cfea3fc17'
           break;
       }
       const res = await axios.get(url)

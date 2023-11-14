@@ -5,7 +5,6 @@ import './index.scss'
 const CustomSearch = ({search, setSearch, defineSearch, setDefineSearch, searchDatas, placeholder}) => {
   const [searchIsActive, setSearchIsActive] = useState(false)
   const inputDom = useRef()
-  console.log(inputDom)
   
   // 綁定搜尋
   const searchData = (e) => {
